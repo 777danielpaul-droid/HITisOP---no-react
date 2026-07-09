@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HIT is OP // VAPOR-ARCADE</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="lightning-container">
+      <svg
+        class="lightning-svg main-bolt"
+        viewBox="0 0 200 800"
+        preserveAspectRatio="none"
+      >
+        <polyline
+          class="main-stream"
+          points="100,0 92,60 125,130 75,250 145,340 65,490 130,610 85,710 105,800"
+        />
+
+        <polyline
+          class="sub-branch branch-left"
+          points="125,130 50,160 85,260 20,310 60,420 10,480"
+        />
+
+        <polyline
+          class="sub-branch branch-right"
+          points="145,340 195,390 160,500 220,580 175,690 230,760"
+        />
+      </svg>
+
+      <svg
+        class="lightning-svg branch-bolt"
+        viewBox="0 0 200 800"
+        preserveAspectRatio="none"
+      >
+        <polyline
+          points="150,0 135,90 170,210 120,360 160,510 105,660 135,800"
+        />
+      </svg>
+    </div>
+
+    <svg style="position: absolute; width: 0; height: 0">
+      <filter id="lightning-distortion">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.06"
+          numOctaves="5"
+          result="noise"
+        />
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="noise"
+          scale="110"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        />
+      </filter>
+    </svg>
+
+    <div class="crt-scanlines"></div>
+    <div class="glitch-bg"></div>
+
+    <div class="arcade-interface">
+      <header class="top-section">
+        <h1 class="neon-title" data-text="HIT is OP">
+          HIT <span class="lowercase-text">is</span> OP
+        </h1>
+        <p class="vapor-tagline">竜の時代を終わらせろ // END THE DRAGONS AGE</p>
+      </header>
+
+      <main class="middle-section">
+        <div class="menu-box">
+          
+          <a
+            href="https://coldasic3.itch.io/h1tisop"
+            target="_blank"
+            class="menu-item"
+            style="text-decoration: none"
+          >
+            <span class="jp-char">街</span> STORY-MODE
+         
+
+          <a
+            href="https://coldasic3.itch.io/hit2p"
+            target="_blank"
+            class="menu-item"
+            style="text-decoration: none"
+          >
+            <span class="jp-char">命</span> 2P-MODE
+          </a>
+        </div>
+      </main>
+
+      <footer class="bottom-section">
+        <div class="coin-wrap">
+          <a href="#play" class="btn-top-banner neon-blink-tiffany">
+            超強力戦闘 // INSERT COIN // READY
+          </a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
